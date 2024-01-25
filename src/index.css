@@ -5,6 +5,7 @@
     --gris: #94a3b8;
     --gris-oscuro: #64748b;
     --negro: #000;
+    --lavender: #667eea;
 }
 
 body {
@@ -47,7 +48,7 @@ h2 {
 }
 
 header {
-    background-color: var(--azul);
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
 }
 
 header h1 {
@@ -80,7 +81,7 @@ header h1 {
     color: var(--blanco);
     margin-bottom: 4rem;
     padding-bottom: 1rem;
-    border-bottom: 2px solid var(--azul);
+    border-bottom: 2px solid var(--lavender);
 }
 
 .formulario .campo {
@@ -89,7 +90,7 @@ header h1 {
 }
 
 .formulario label {
-    color: var(--azul);
+    color: var(--lavender);
     font-size: 2.8rem;
     text-align: center;
     margin-bottom: 2rem;
@@ -106,7 +107,7 @@ header h1 {
 }
 
 .formulario input[type="submit"] {
-    background-color: #1048a4;
+    background-color: #764ba2;
     border: none;
     padding: 1rem;
     text-align: center;
@@ -127,7 +128,7 @@ header h1 {
 }
 
 .formulario input[type="submit"]:hover {
-    background-color: #042a67;
+    background-color: #573875;
     cursor: pointer;
 }
 
@@ -236,7 +237,7 @@ header h1 {
 
 .contenido-presupuesto span {
     font-weight: 900;
-    color: var(--azul);
+    color: var(--lavender);
 }
 
 .reset-app {
@@ -320,7 +321,6 @@ main {
 
 .contenido-gasto img {
     width: 10rem;
-    
 }
 
 .descripcion-gasto p {
@@ -429,7 +429,7 @@ body .modal {
 
 /*** SWIPE LIST OVERRIDES **/
 .swipe-action__leading {
-    background-color: var(--azul);
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
     color: var(--blanco);
     margin-bottom: 2rem;
 }
