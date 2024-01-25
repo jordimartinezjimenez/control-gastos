@@ -5,6 +5,7 @@ import Modal from './components/Modal';
 import Filtros from './components/Filtros';
 import { generarId } from './helpers'
 import IconoNuevoGasto from './img/nuevo-gasto.svg'
+import IconoGitHub from './img/github-mark.svg'
 
 function App() {
 
@@ -86,6 +87,7 @@ function App() {
       <div className={modal ? "fijar" : ""}>
         <Header
           gastos={gastos}
+          setGastos={setGastos}
           presupuesto={presupuesto}
           setPresupuesto={setPresupuesto}
           isValidPresupuesto={isValidPresupuesto}
@@ -109,6 +111,9 @@ function App() {
             </main>
             <div className='nuevo-gasto'>
               <img src={IconoNuevoGasto} alt="Icono Nuevo Gasto" onClick={handleNuevoGasto} />
+            </div>
+            <div className='github-icon'>
+              <a href="https://github.com/jordimartinezjimenez" target='_blank' rel='noreferrer'><img src={IconoGitHub} alt="Icono GitHub" /></a>
             </div>
           </>
         )}

@@ -232,7 +232,7 @@ header h1 {
 
 .contenido-presupuesto p.negativo,
 .contenido-presupuesto p.negativo span {
-    color: red;
+    color: #e21d48;
 }
 
 .contenido-presupuesto span {
@@ -364,12 +364,18 @@ main {
     right: 5rem;
 }
 
-.nuevo-gasto img {
+.nuevo-gasto img, .github-icon img {
     width: 5rem;
 }
 
-.nuevo-gasto img:hover {
+.nuevo-gasto img:hover, .github-icon img:hover {
     cursor: pointer;
+}
+
+.github-icon {
+    position: fixed;
+    bottom: 5rem;
+    left: 5rem;
 }
 
 .modal {
