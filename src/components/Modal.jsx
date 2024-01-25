@@ -1,17 +1,30 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Mensaje from './Mensaje'
 import CerrarBtn from '../img/cerrar.svg'
 
-const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
+const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto, gastoEditar, setGastoEditar}) => {
 
   const [mensaje, setMensaje] = useState('');
 
   const [nombre, setNombre] = useState('');
   const [cantidad, setCantidad] = useState('');
   const [categoria, setCategoria] = useState('');
+  const [id, setId] = useState('');
+  const [fecha, setFecha] = useState('');
+
+  useEffect(() => {
+    if (Object.keys(gastoEditar).length > 0) {
+      setNombre(gastoEditar.nombre)
+      setCantidad(gastoEditar.cantidad)
+      setCategoria(gastoEditar.categoria)
+      setId(gastoEditar.id)
+      setFecha(gastoEditar.fecha)
+    }
+  }, [])
 
   const ocultarModal = () => {
     setAnimarModal(false)
+    setGastoEditar({})
 
     setTimeout(() => {
       setModal(false)
@@ -29,7 +42,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
       }, 3000);
       return
     }
-    guardarGasto({ nombre, cantidad, categoria })
+    guardarGasto({ nombre, cantidad, categoria, id, fecha })
   }
 
   return (
@@ -39,7 +52,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
       </div>
 
       <form onSubmit={handleSubmit} className={`formulario ${animarModal ? "animar" : 'cerrar'}`}>
-        <legend>Nuevo Gasto</legend>
+        <legend>{Object.keys(gastoEditar).length > 0 ? 'Editar Gasto' : 'Nuevo Gasto'}</legend>
         {mensaje && <Mensaje tipo="error">{mensaje}</Mensaje>}
         <div className='campo'>
           <label htmlFor="nombre">Nombre Gasto</label>
@@ -62,7 +75,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto }) => {
             <option value="otros">Otros</option>
           </select>
 
-          <input type="submit" value="Añadir Gasto" />
+          <input type="submit" value={Object.keys(gastoEditar).length > 0 ? 'Guardar Cambios' : 'Añadir Gasto'} />
         </div>
       </form>
     </div>
