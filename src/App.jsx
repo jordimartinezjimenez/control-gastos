@@ -94,6 +94,10 @@ function App() {
           setIsValidPresupuesto={setIsValidPresupuesto}
         />
 
+        <div className='github-icon'>
+          <a href="https://github.com/jordimartinezjimenez/control-gastos" target='_blank' rel='noreferrer'><img src={IconoGitHub} alt="Icono GitHub" /></a>
+        </div>
+
         {isValidPresupuesto && (
           <>
             <main>
@@ -111,9 +115,6 @@ function App() {
             </main>
             <div className='nuevo-gasto'>
               <img src={IconoNuevoGasto} alt="Icono Nuevo Gasto" onClick={handleNuevoGasto} />
-            </div>
-            <div className='github-icon'>
-              <a href="https://github.com/jordimartinezjimenez" target='_blank' rel='noreferrer'><img src={IconoGitHub} alt="Icono GitHub" /></a>
             </div>
           </>
         )}

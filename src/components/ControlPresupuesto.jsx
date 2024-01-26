@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
-const ControlPresupuesto = ({ presupuesto, gastos, setGastos, setPresupuesto }) => {
+const ControlPresupuesto = ({ presupuesto, gastos, setGastos, setPresupuesto, setIsValidPresupuesto }) => {
 
     const [disponible, setDisponible] = useState(0)
     const [gastado, setGastado] = useState(0)
@@ -12,7 +12,6 @@ const ControlPresupuesto = ({ presupuesto, gastos, setGastos, setPresupuesto }) 
         const totalGastado = gastos.reduce((total, gasto) => total + gasto.cantidad, 0)
         const totalDisponible = presupuesto - totalGastado;
 
-        // Calcular porcentaje gastado
         const nuevoPorcentaje = (((presupuesto - totalDisponible) / presupuesto) * 100).toFixed(2);
 
         setDisponible(totalDisponible)
@@ -33,6 +32,11 @@ const ControlPresupuesto = ({ presupuesto, gastos, setGastos, setPresupuesto }) 
 
     const handleResetApp = () => {
         const resultado = confirm("¿Estas seguro de reiniciar el presupuesto y los gastos")
+        if (resultado) {
+            setGastos([])
+            setPresupuesto(0)
+            setIsValidPresupuesto(false)
+        }
     }
 
     return (
@@ -40,7 +44,7 @@ const ControlPresupuesto = ({ presupuesto, gastos, setGastos, setPresupuesto }) 
             <div>
                 <CircularProgressbar
                     styles={buildStyles({
-                        pathColor: porcentaje > 100 ? '#e21d48' : '#667eea',
+                        pathColor: porcentaje > 100 ? 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)' : '#667eea',
                         trailColor: '#F5F5F5',
                         textColor: porcentaje > 100 ? '#e21d48' : '#667eea'
                     })}

@@ -141,7 +141,7 @@ header h1 {
     background-color: var(--gris-claro);
 }
 
-.formulario select :nth-child(even) {
+select :nth-child(even) {
     background-color: var(--blanco);
 }
 
@@ -441,7 +441,7 @@ body .modal {
 }
 
 .swipe-action__trailing {
-    background-color: #db2777;
+    background: linear-gradient(90deg, #e52d27 0%, #b31217 100%);
     margin-bottom: 2rem;
     color: var(--blanco);
 }
