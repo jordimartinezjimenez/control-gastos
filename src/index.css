@@ -89,6 +89,13 @@ header h1 {
     margin-bottom: 2rem;
 }
 
+.formulario > .campo > .nuevo-presupuesto {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .formulario label {
     color: var(--lavender);
     font-size: 2.8rem;
@@ -323,6 +330,12 @@ main {
     width: 10rem;
 }
 
+@media (max-width: 468px) {
+    .contenido-gasto img {
+        width: 5rem;
+    }
+}
+
 .descripcion-gasto p {
     margin: 0 0 0.3rem 0;
 }
@@ -352,6 +365,7 @@ main {
     font-size: 1.8rem;
     font-weight: 900;
     color: var(--gris-oscuro);
+    text-wrap: pretty;
 }
 
 .descripcion-gasto .fecha-gasto span {
@@ -364,11 +378,13 @@ main {
     right: 5rem;
 }
 
-.nuevo-gasto img, .github-icon img {
+.nuevo-gasto img,
+.github-icon img {
     width: 5rem;
 }
 
-.nuevo-gasto img:hover, .github-icon img:hover {
+.nuevo-gasto img:hover,
+.github-icon img:hover {
     cursor: pointer;
 }
 
@@ -401,11 +417,12 @@ main {
 
 .modal .formulario {
     max-width: 80rem;
-    width: 40rem;
+    width: 100%;
     transition-property: all;
     transition-duration: 300ms;
     transition-timing-function: ease-in;
     opacity: 0;
+    padding: 2.5rem;
 }
 
 .modal label {

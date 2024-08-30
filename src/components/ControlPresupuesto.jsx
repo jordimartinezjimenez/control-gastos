@@ -44,7 +44,7 @@ const ControlPresupuesto = ({ presupuesto, gastos, setGastos, setPresupuesto, se
             <div>
                 <CircularProgressbar
                     styles={buildStyles({
-                        pathColor: porcentaje > 100 ? 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)' : '#667eea',
+                        pathColor: porcentaje > 100 ? '#e21d48' : '#667eea',
                         trailColor: '#F5F5F5',
                         textColor: porcentaje > 100 ? '#e21d48' : '#667eea'
                     })}
