@@ -48,7 +48,7 @@ const Modal = ({ setModal, animarModal, setAnimarModal, guardarGasto, gastoEdita
   return (
     <div className="modal">
       <div className="cerrar-modal">
-        <img src={CerrarBtn} alt="Cerrar Modal" onClick={ocultarModal} />
+        <img src={CerrarBtn} alt="Cerrar Modal" onTouchEnd={ocultarModal} onClick={ocultarModal} />
       </div>
 
       <form onSubmit={handleSubmit} className={`formulario ${animarModal ? "animar" : 'cerrar'}`}>
